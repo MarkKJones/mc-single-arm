@@ -21,10 +21,10 @@ c Vector (real*4) for hut ntuples - needs to match dimension of variables
 c
 	real*8 xs_num,ys_num,xc_sieve,yc_sieve
 	real*8 xsfr_num,ysfr_num,xc_frsieve,yc_frsieve
-        logical use_front_sieve /.false./
+        logical use_sieve /.false./
 c
         common /sieve_info/  xs_num,ys_num,xc_sieve,yc_sieve
-     > ,xsfr_num,ysfr_num,xc_frsieve,yc_frsieve,use_front_sieve
+     > ,xsfr_num,ysfr_num,xc_frsieve,yc_frsieve,use_sieve
 
 
 C Local declarations.
@@ -647,7 +647,7 @@ C for spectrometer ntuples
 	       shms_hut(19)= xc_sieve
 	       shms_hut(20)= yc_sieve
 	       shms_hut(21)= stop_id
-	       if (use_front_sieve) then
+	       if (use_sieve) then
 		  shms_hut(17)= xsfr_num
 		  shms_hut(18)= ysfr_num
 		  shms_hut(19)= xc_frsieve
